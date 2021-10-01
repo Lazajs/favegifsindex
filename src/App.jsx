@@ -1,10 +1,18 @@
 import './App.css';
-import First from './Components/First'
+import Stilished from './Components/StyledComp'
+import { Component } from 'react'
 
-function App() {
-  return (
-    <First />
-  );
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
+  render() { 
+    return ( 
+      <Stilished/>
+    );
+  }
 }
-
+ 
 export default App;
