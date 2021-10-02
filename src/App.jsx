@@ -10,7 +10,7 @@ class App extends Component {
   }
   render() { 
     return ( 
-      <Stilished/>
+      <Stilished color="#000a"/>
     );
   }
 }
