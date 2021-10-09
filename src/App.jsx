@@ -1,7 +1,7 @@
 import './App.css';
-import Stilished from './Components/StyledComp'
 import { Component } from 'react'
-
+import Testing from './Components/TestingCom';
+import UsingTheHooks from './Components/UsingHooks';
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +10,10 @@ class App extends Component {
   }
   render() { 
     return ( 
-      <Stilished color="#000a"/>
+      <div>
+        <Testing/>
+        {/* <UsingTheHooks /> */}
+      </div>
     );
   }
 }
