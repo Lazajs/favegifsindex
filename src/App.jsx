@@ -1,21 +1,15 @@
-import './App.css';
-import { Component } from 'react'
-import Testing from './Components/TestingCom';
-import UsingTheHooks from './Components/UsingHooks';
+import Header from './Components/Header'
+import Gifs from './Components/Gifs';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
-    return ( 
-      <div>
-        <Testing/>
-        {/* <UsingTheHooks /> */}
-      </div>
-    );
-  }
+const App = (props)=>{
+  return (
+    <>
+      <Header />
+      
+      {/* <Gifs /> */}
+    </>
+  )
 }
- 
+
+
 export default App;
