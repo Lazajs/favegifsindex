@@ -9,9 +9,11 @@ function getGifs(keyword, rating, limit) {
                 const info = {
                     url: img.images.downsized.url,
                     id: img.id,
-                    title: img.title
+                    title: img.title,
+                    width: img.images.downsized.width,
+                    height: img.images.downsized.height
                 }
-                
+
                return info
             })
             return gif
