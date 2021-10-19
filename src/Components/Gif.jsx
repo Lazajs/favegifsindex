@@ -2,16 +2,11 @@ import React, {useRef, useEffect} from 'react'
 import './Gif.css'
 
 
-const Gif = ({observer, url})=>{
-    const newToObserve = useRef(null)
+const Gif = ({url, title})=>{
 
-    useEffect(()=> {
-        observer.observe(newToObserve.current)
-    },[url])
-
-    return  <>
-                <img ref={newToObserve} className="gif-img" src={url} />
-            </>
+    return  <div className="gif-container">
+                <img alt={title} title={title} className="gif-img" src={url} />
+            </div>
 }
 
 export default Gif;

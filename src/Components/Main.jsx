@@ -13,25 +13,8 @@ const Main = ({topics, rating})=>{
     const [gifURL, setGifURL] = useState(null)
 
     useEffect(()=>{
-        getGifs(topics, rating, 2).then(url => setGifURL(url))
+        getGifs(topics, rating, 10).then(url => setGifURL(url))
     },[topics,rating])
-
-
-    const otherGif = (entries)=>{
-        if (entries[0].isIntersecting) {
-            const copyState = gifURL.map(url => url)
-
-            getGifs(topics, rating, gifURL.length + 1).then(url => {
-                const lastNumber = url.length - 1
-                copyState.push(url[lastNumber])
-                setGifURL(copyState)
-                console.log(gifURL)              
-            })
-        }
-    }
-
-    const observer = new IntersectionObserver(otherGif, options)
-
 
 
     if(gifURL) {
@@ -39,7 +22,7 @@ const Main = ({topics, rating})=>{
         <>
             <main className="container">
                 {
-                    gifURL.map(singleGif => <Gif observer={observer} url={singleGif} />)
+                    gifURL.map(singleGif => <Gif url={singleGif.url} key={singleGif.id} title={singleGif.title} />)
                 }
             </main>
         </>

@@ -5,7 +5,15 @@ function getGifs(keyword, rating, limit) {
         .then(res => res.json())
         .then(res => {
             const { data } = res
-            const gif = data.map(img => img.images.downsized.url)
+            const gif = data.map(img => {
+                const info = {
+                    url: img.images.downsized.url,
+                    id: img.id,
+                    title: img.title
+                }
+                
+               return info
+            })
             return gif
         })
 }
