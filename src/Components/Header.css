@@ -5,36 +5,52 @@
 }
 
 .header {
-    width: 100%;
+    width: 100vw;
     height: 25rem;
     position: relative;
     background-image: linear-gradient(#0009, #0009) ,url('../images/bg2.jpg');
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header__text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.header__text > p {
+    background: transparent;
+    text-align: center;
+    width: 50%;
+    color:#fffb;
+    font-weight: 400;
+    margin-top: .8rem;
+
 }
 
 .header__heading {
     background-color: transparent;
-    color: #fff;
+    color: #fffc;
     font-weight: 700;
     font-size: 4rem;
     letter-spacing: .2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     user-select: none;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 }
 
 .header__form {
-    max-width: inherit;
-    width: 90%;
-    position: absolute;
-    left: 50%;
-    transform:translateX(-50%);
-    bottom: 1rem;
+    width: 100vw;
+    position: sticky;
+    top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
 }
 
 .header__form > input , select {
@@ -49,8 +65,7 @@
 
 
 .header__form > input:first-child {
-    flex-grow: 3;
-    flex-basis:3;
+    width: 80vw;
     border-right: #111d 1px solid;
     padding: 2rem;
     transition: background 150ms ease-in;
@@ -61,7 +76,7 @@
 }
 
 .header__form > input:nth-child(2) {
-    width: 6rem;
+    width: 6vw;
     appearance: none;
     padding: 1rem;
 }
@@ -71,14 +86,15 @@
 }
 
 .search:last-child { 
-    width: 10rem;
+    
+    width: 14vw;
     transition: background-color .250s;
     background-color: #ddffdd;
     cursor: pointer;
     background-image: url('../images/search.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40%    
+    background-size: 4rem    
 }
 
 
