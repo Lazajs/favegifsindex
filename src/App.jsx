@@ -1,6 +1,7 @@
+import { useRef, useState, useEffect } from 'react'
 import Header from './Components/Header'
 import Main from './Components/Main';
-import { useRef, useState, useEffect } from 'react'
+// import Footer from './Components/Footer';
 
 const App = ()=>{
   // search queries 
@@ -22,7 +23,6 @@ const App = ()=>{
 
   useEffect(()=>{
     form.current.onsubmit = handleSubmit
-    console.log(options) 
   }, [options])
   
 
@@ -30,6 +30,7 @@ const App = ()=>{
     <>
       <Header topic={topic} rating={rating} form={form} /> 
       <Main topics={options.topic} rating={options.rating} />
+      {/* <Footer /> */}
     </>
   )
 }
