@@ -5,6 +5,7 @@ const Header = ({topic, rating, form})=>{
     return ( 
         <>
             <header className="header shadows">
+                <h1 className="header__heading">faveGifs</h1>
                 <form ref={form} className="header__form" action="get">
                     <input ref={topic} type="text" placeholder="Enter a topic"/>
                     <select alt="rating" ref={rating}> //.selectedOptions() array .selectedIndex()

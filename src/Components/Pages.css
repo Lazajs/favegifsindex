@@ -1,0 +1,20 @@
+.Pages__container {
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+    margin: 2rem 0 2rem 0;
+}
+
+
+.Pages__btn {
+    width: 4rem;
+    height: 4rem;
+    margin: .5rem;
+    cursor: pointer;
+    background-color: #112221;
+    border-radius: 50%;
+    border: none;
+    color:#fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+}

@@ -1,16 +1,29 @@
 .shadows {
-    box-shadow: 3px 0px 10px 0px #888;
--webkit-box-shadow: 3px 0px 10px 0px #888;
--moz-box-shadow: 3px 0px 10px 0px #888;
+    box-shadow: 3px 0px 10px 0px #112221;
+-webkit-box-shadow: 3px 0px 10px 0px #112221;
+-moz-box-shadow: 3px 0px 10px 0px #112221;
 }
 
 .header {
     width: 100%;
-    height: 50vh;
+    height: 25rem;
     position: relative;
-    background-image: linear-gradient(#fff1, #fff2) ,url('../images/background.jpg');
+    background-image: linear-gradient(#0009, #0009) ,url('../images/bg2.jpg');
     background-position: center;
     background-size: cover;
+}
+
+.header__heading {
+    background-color: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
 }
 
 .header__form {
@@ -30,7 +43,7 @@
     border: none;
     outline: none;
     color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc5;
     font-size: 2rem;
 }
 
@@ -40,7 +53,11 @@
     flex-basis:3;
     border-right: #111d 1px solid;
     padding: 2rem;
-    
+    transition: background 150ms ease-in;
+}
+
+.header__form > input:first-child:focus {
+    background: #112221;
 }
 
 .header__form > input:nth-child(2) {
@@ -49,10 +66,14 @@
     padding: 1rem;
 }
 
+.header__form > input:nth-child(2):focus {
+    background: #121;
+}
+
 .search:last-child { 
     width: 10rem;
-    background-color: #333;
     transition: background-color .250s;
+    background-color: #ddffdd;
     cursor: pointer;
     background-image: url('../images/search.svg');
     background-repeat: no-repeat;
@@ -60,8 +81,9 @@
     background-size: 40%    
 }
 
+
 .search:last-child:hover {
-    background-color: #444;
+    background-color: #aaffdd;
 }
 
 .header__form > select {
