@@ -29,7 +29,7 @@ const App = ()=>{
   return (
     <>
       <Header topic={topic} rating={rating} form={form} /> 
-      <Main topics={options.topic} rating={options.rating} />
+      <Main topics={options.topic} rating={options.rating} /> 
       {/* <Footer /> */}
     </>
   )
