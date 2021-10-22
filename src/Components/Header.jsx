@@ -11,27 +11,9 @@ const Header = ({topic, rating, form})=>{
         form.current.classList.toggle('formActive')
     }
 
-    // const handleObserver = (entries)=>{
-    //     entries.forEach(e => {
-    //         if (!e.isIntersecting) {
-    //             console.log(e)
-    //             e.target.style.backgroundColor = 'white'
-    //         }
-    //     })
-    // }
-
-    // const options = {
-    //     root: form.current,
-    //     rootMargin: '10px',
-    //     threshold: 1
-    // }
-
-    // const observer = new IntersectionObserver(handleObserver, options)
-
-
+ 
     useEffect(()=> {
         dropDown.current.addEventListener('click', handleClick)
-        // observer.observe(dropDown.current)
         return ()=> {
             dropDown.current.removeEventListener('click', handleClick)
         }
@@ -46,7 +28,7 @@ const Header = ({topic, rating, form})=>{
                 </div>
             </header>
             <form ref={form} className="header__form" action="get">
-                <input ref={topic} type="text" placeholder="Start finding your favourite gifs by typing a topic!"/>
+                <input ref={topic} type="text" placeholder="Start finding your favourite gifs!"/>
                     <select alt="rating" ref={rating}>
                             <option value="g">g</option>
                             <option value="pg">pg</option>
@@ -55,7 +37,7 @@ const Header = ({topic, rating, form})=>{
                     </select>
                     <div ref={dropDown} className="dropDown" ></div>
                     <div className="closeDropDown"></div>
-                    <input type="submit" className="search" value=" "/>
+                    <input type="submit" className="search" value="Find"/>
                 </form>
         </>
     )
