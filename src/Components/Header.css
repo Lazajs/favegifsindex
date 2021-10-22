@@ -1,3 +1,23 @@
+/* #84c2ff  original  */
+/* #a384ff  analogous  */
+/* #84ffc2 analogous 2  */
+
+
+@keyframes animateMenu {
+    0% {
+        background-position: center;
+    }
+
+    50% {
+        background-position: bottom;
+    } 
+
+    100% {
+        background-position: center;
+    }
+}
+
+
 .shadows {
     box-shadow: 3px 0px 10px 0px #112221;
 -webkit-box-shadow: 3px 0px 10px 0px #112221;
@@ -6,12 +26,10 @@
 
 .header {
     width: 100vw;
-    height: 25rem;
-    position: relative;
-    background-image: linear-gradient(#0009, #0009) ,url('../images/bg2.jpg');
-    background-position: center;
+    height: 90vh ;
+    background-image: linear-gradient(#000d, #000d), url('../images/headerbg2.gif');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .header__text {
@@ -28,6 +46,7 @@
 .header__text > p {
     background: transparent;
     text-align: center;
+    line-height: 2;
     width: 50%;
     color:#fffb;
     font-weight: 400;
@@ -47,61 +66,55 @@
 
 .header__form {
     width: 100vw;
-    position: sticky;
-    top: 0;
+    height: 10vh;
+    background-color: transparent;
+}
+
+.header__form > input, .header__form > select {
+    display: none;
+}
+
+.header__form.formActive > input, .header__form.formActive > select {
+    display: inline-block;
+}
+
+.header__form.formActive {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
     display: flex;
-    justify-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    border:1px solid red;
 }
 
-.header__form > input , select {
-    height: 6rem;
-    background: #000;
-    border: none;
-    outline: none;
-    color: #fff;
-    border: 1px solid #ccc5;
-    font-size: 2rem;
-}
-
-
-.header__form > input:first-child {
-    width: 80vw;
-    border-right: #111d 1px solid;
-    padding: 2rem;
-    transition: background 150ms ease-in;
-}
-
-.header__form > input:first-child:focus {
-    background: #112221;
-}
-
-.header__form > input:nth-child(2) {
-    width: 6vw;
-    appearance: none;
-    padding: 1rem;
-}
-
-.header__form > input:nth-child(2):focus {
-    background: #121;
-}
-
-.search:last-child { 
-    
-    width: 14vw;
-    transition: background-color .250s;
-    background-color: #ddffdd;
-    cursor: pointer;
-    background-image: url('../images/search.svg');
+.dropDown {
+    display: block;
+    width: 100vw;
+    height: 8rem;
+    position: fixed;
+    top: 0;
+    background-image: url('../images/openmenu.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 4rem    
-}
-
-
-.search:last-child:hover {
-    background-color: #aaffdd;
-}
-
-.header__form > select {
+    background-size: 3rem;
+    background-color: transparent;
+    filter: invert();
     padding: 1rem;
+    animation: animateMenu 2s infinite;
+    transition: 1s ease-in-out;
+}
+
+.dropDown.isActive{
+    animation:none;
+    height: 100vh;
+    background-image: none;
+    background-color: #84ffc255;
+}
+
+.isActive ~ .header__form > input, .isActive ~ .header__form > select {
+    display: inline-block;
 }
