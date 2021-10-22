@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import Header from './Components/Header'
 import Main from './Components/Main';
-// import Footer from './Components/Footer';
+import Footer from './Components/Footer';
 
 const App = ()=>{
   // search queries 
@@ -30,7 +30,7 @@ const App = ()=>{
     <>
       <Header topic={topic} rating={rating} form={form} /> 
       <Main topics={options.topic} rating={options.rating} /> 
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
