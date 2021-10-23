@@ -103,7 +103,7 @@
 .header__form.formActive > select {
     width: 8rem;
     height: 5rem;
-    cursor:pointer;
+    cursor:none;
 }
 
 .header__form.formActive > input[type="submit"] {
@@ -112,7 +112,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     background-color: #fac;
-    cursor:pointer;
+    cursor:none;
 }
 
 .header__form.formActive {
@@ -142,7 +142,7 @@
     padding: 1rem;
     animation: animateMenu 2s infinite;
     transition: 1s ease-in-out;
-    cursor: pointer;
+    cursor: none;
 }
 
 .dropDown.isActive{

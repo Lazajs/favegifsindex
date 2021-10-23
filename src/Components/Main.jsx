@@ -9,7 +9,7 @@ const Main = ({topics, rating})=>{
     const [gifURL, setGifURL] = useState(null)
 
     useEffect(()=>{
-        if(topics) getGifs(topics, rating, 20).then(url => setGifURL(url))
+        if(topics) getGifs(topics, rating, 24).then(url => setGifURL(url))
     },[topics,rating])
     
     if(gifURL) {
