@@ -4,7 +4,8 @@ import './Gif.css'
 
 const Gif = ({url, title, width, height})=>{
     return  <div  className="gif-container">
-                <img  alt={title} title={title} className="gif-img" src={url} />
+                <img loading="lazy" alt={title} className="gif-img" src={url} />
+                <p>{title}</p>
             </div>
 }
 

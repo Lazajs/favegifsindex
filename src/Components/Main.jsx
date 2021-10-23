@@ -9,14 +9,12 @@ const Main = ({topics, rating})=>{
     const [gifURL, setGifURL] = useState(null)
 
     useEffect(()=>{
-        console.log(topics)
         if(topics) getGifs(topics, rating, 20).then(url => setGifURL(url))
     },[topics,rating])
     
-
     if(gifURL) {
         const gifContainer = gifURL.map(gif => gif)
-
+        console.log(gifURL)
         return (
         <>
             <main className="container">

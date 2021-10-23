@@ -175,6 +175,7 @@
         box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
         -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+        z-index: 20;
     }
 
     .header__form > input, .header__form > select {
@@ -205,5 +206,10 @@
         width: 15vw;
         cursor: pointer;
         background-color: #84ffc2;
+        transition: background-color 250ms;
+    }
+
+    .header__form > input[type="submit"]:hover {
+        background-color: #84ffaa;
     }
 }

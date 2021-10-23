@@ -28,10 +28,9 @@ const Charging = (props)=>{
         }
     },[])
 
-
-
     return  <div className="sprite-container">
                 <div ref={sprite} className="charging-sprite"></div>
+                <p className="sprite-text">Loading...</p>
             </div>
 }
 

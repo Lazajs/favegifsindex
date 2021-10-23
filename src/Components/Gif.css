@@ -1,6 +1,17 @@
 .gif-container {
     width: 100%;
     height: 100%;
+    position: relative;
+}
+
+.gif-container p {
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: fit-content;
+    background-color: #000c;
+    color: #fff;
 }
 
 .gif-img {
