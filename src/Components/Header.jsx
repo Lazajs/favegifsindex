@@ -1,24 +1,19 @@
 import './Header.css'
 import {useRef, useEffect} from 'react'
+import search from '../images/search.svg'
+import close from '../images/close.svg'
 
 const Header = ({topic, rating, form})=>{
     let isActive
     const dropDown = useRef(null)
 
-    const handleClick = (e)=>{
+    const handleClickDropDown = (e)=>{
         isActive = (isActive) ? false : true
-        e.target.classList.toggle('isActive')          
+        dropDown.current.classList.toggle('isActive')          
         form.current.classList.toggle('formActive')
     }
 
  
-    useEffect(()=> {
-        dropDown.current.addEventListener('click', handleClick)
-        return ()=> {
-            dropDown.current.removeEventListener('click', handleClick)
-        }
-    },[])
-
     return ( 
         <>
             <header className="header shadows">
@@ -35,10 +30,11 @@ const Header = ({topic, rating, form})=>{
                             <option value="pg-13">pg-13</option>
                             <option value="r">r</option>
                     </select>
-                    <div ref={dropDown} className="dropDown" ></div>
+                    <div ref={dropDown} onClick={handleClickDropDown} className="dropDown" ></div>
                     <div className="closeDropDown"></div>
-                    <input type="submit" className="search" value="Find"/>
+                    <button className="search" ><img src={search} /></button>
                 </form>
+                <img src={close} onClick={handleClickDropDown} className="closeForm" />
         </>
     )
 }

@@ -69,27 +69,44 @@
     background-color: transparent;
 }
 
-.header__form > input, .header__form > select {
+
+
+.header__form > input, .header__form > select, .search, .closeForm {
     z-index: -20;
     opacity: 0;
 }
 
-.header__form.formActive > input, .header__form.formActive > select {
+
+/* active form  */
+.header__form.formActive > input, .header__form.formActive > select, .header__form.formActive .search {
     display: inline-block;
     z-index: 20;
     opacity: 1;
     font-weight: 400;
     font-size: 2rem;
     outline: none;
-    border: none;
+    border: 1px dashed black;
     border-radius: 4px;
     transition: opacity 1s;
     margin-bottom: 1rem;
-    background-color: #84ffc2;
+    background-color: #ddc;
+}
+
+.header__form.formActive ~ .closeForm {
+    position: fixed;
+    opacity: 1;
+    z-index: 20;
+    filter: invert();
+    background-color: transparent;
+    top: 1rem;
+    right: 1rem;
+    width: 5rem;
+    height: 5rem;
+    cursor: none;
 }
 
 .header__form.formActive > input:focus, .header__form.formActive > select:focus {
-    background-color: #84c2ff;
+    background-color: #ffc;
 } 
 
 .header__form.formActive > input[type="text"] {
@@ -100,31 +117,51 @@
     font-size: 2rem;
 }
 
-.header__form.formActive > select {
+.header__form.formActive > select, .header__form.header__form.formActive select > * {
     width: 8rem;
     height: 5rem;
     cursor:none;
+    background-color: #ddc;
 }
 
-.header__form.formActive > input[type="submit"] {
-    width: 98vw;
-    height: 6rem;
+.header__form.formActive > .search {
+    width: fit-content;
+    height: fit-content;
     font-size: 2.5rem;
     font-weight: 700;
-    background-color: #fac;
     cursor:none;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
+
+.search img {
+    padding: .5rem;
+    width: 30vw;
+    border-radius: 4px;
+    height: 6rem;
+    background-color: #fff;
+    transition: background-color 250ms;
+    border: 1px solid black;
+}
+
+.search img:active {
+    background-color: #999;
+}
+
 
 .header__form.formActive {
     background-color: transparent;
+    padding: 8rem 0 6rem 0;
     width: 100vw;
     height: 100vh;
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     top: 0;
+    z-index: 10;
 }
 
 .dropDown {
@@ -143,6 +180,7 @@
     animation: animateMenu 2s infinite;
     transition: 1s ease-in-out;
     cursor: none;
+    z-index: 10;
 }
 
 .dropDown.isActive{
@@ -152,7 +190,7 @@
     background-color: #fff9;
 }
 
-.isActive ~ .header__form > input, .isActive ~ .header__form > select {
+.isActive ~ .header__form > input, .isActive ~ .header__form > select, .isActive ~ .search {
     display: inline-block;
 }
 
@@ -178,7 +216,7 @@
         z-index: 20;
     }
 
-    .header__form > input, .header__form > select {
+    .header__form > input, .header__form > select, .search, .header__form > select > * {
         opacity: 1;
         font-weight: 400;
         font-size: 2rem;
@@ -188,6 +226,7 @@
         z-index: 30;
         margin: 0;
         border-radius: 0;
+        background-color: #ddc;
         border-right: 1px solid #000;
         
     }
@@ -202,14 +241,19 @@
         cursor: pointer;
     }
 
-    .header__form > input[type="submit"] {
+    .search img{
         width: 15vw;
         cursor: pointer;
-        background-color: #84ffc2;
         transition: background-color 250ms;
+        border:none;
     }
 
-    .header__form > input[type="submit"]:hover {
-        background-color: #84ffaa;
+    .search img:hover {
+        background-color: #aaa;
     }
+
+    .search img:active {
+        background-color: none;
+    }
+
 }
