@@ -1,20 +1,30 @@
-.Pages__container {
-    display: flex;
+.pages__container-p {
+    display: block;
+    width: 90vw;
     height: 5rem;
-    justify-content: center;
-    margin: 2rem 0 2rem 0;
-}
-
-
-.Pages__btn {
-    width: 4rem;
-    height: 4rem;
-    margin: .5rem;
-    cursor: pointer;
-    background-color: #112221;
-    border-radius: 50%;
-    border: none;
-    color:#fff;
-    font-size: 1.8rem;
+    padding-top: 1rem;
+    color: #fff;
+    font-size: 2rem;
     font-weight: 700;
+    margin: 2rem auto;
+    text-align: center;
+    background-color: #6e3eff ;
+    transition: background-color 250ms;
 }
+
+.pages__container-p:active {
+    background-color: #6e3eff99;
+}
+
+@media (min-width: 1024px) {
+    .pages__container-p {
+        cursor: pointer;
+    }
+
+    .pages__container-p:hover {
+        background-color: #6e3eff99;
+    }
+}
+
+
+

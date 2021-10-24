@@ -1,15 +1,18 @@
+import {useContext} from 'react'
 import './Pages.css'
-
+import GifsContext from '../context/GifsContext';
 
 const Pages = (ref)=>{
-    return  <>
-                <div className="Pages__container">
-                    <button className="Pages__btn">1</button>
-                    <button className="Pages__btn">2</button>
-                    <button className="Pages__btn">...</button>
-                    <button className="Pages__btn">10</button>
-                </div>
-            </>
+    const {data, setData} = useContext(GifsContext)
+
+    const handleClick = ()=>{
+        setData({
+            count: data.count + 10,
+            offset: data.offset + 10
+        })
+    }
+
+    return <p onClick={handleClick} className="pages__container-p">Load more...</p>     
 }
 
 export default Pages

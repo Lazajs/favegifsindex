@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import Header from './Components/Header'
 import Main from './Components/Main';
 import Footer from './Components/Footer';
+import {GifsContext} from './context/GifsContext'
 
 const App = ()=>{
   // search queries 
@@ -28,8 +29,10 @@ const App = ()=>{
 
   return (
     <>
-      <Header topic={topic} rating={rating} form={form} /> 
-      <Main topics={options.topic} rating={options.rating} /> 
+      <Header topic={topic} rating={rating} form={form} />
+      <GifsContext> 
+        <Main topics={options.topic} rating={options.rating} />
+      </GifsContext> 
       <Footer />
     </>
   )
