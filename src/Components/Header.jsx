@@ -22,6 +22,8 @@ const Header = ({topic, rating, form})=>{
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare tempus dapibus.</p>
                 </div>
             </header>
+
+            
             <form ref={form} className="header__form" action="get">
                 <input ref={topic} type="text" placeholder="Start finding your favourite gifs!"/>
                     <select alt="rating" ref={rating}>
