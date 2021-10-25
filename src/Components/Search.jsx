@@ -1,19 +1,13 @@
 import './Search.css'
-import {useRef} from 'react'
+import {useRef, useState} from 'react'
 import search from '../images/search.svg'
 import close from '../images/close.svg'
 
 const Search = ({form, topic, rating})=>{
-    let isActive
+    let [isActive, setActive] = useState(false)
     const dropDown = useRef(null)
 
-    const handleClickDropDown = (e)=>{
-        isActive = (isActive) ? false : true
-        dropDown.current.classList.toggle('isActive')          
-        form.current.classList.toggle('formActive')
-    }
-
-    return <>
+    if (isActive) return  (<>
             <form ref={form} className="header__form" action="get">
                 <input ref={topic} type="text" placeholder="Start finding your favourite gifs!"/>
                     <select alt="rating" ref={rating}>
@@ -22,13 +16,16 @@ const Search = ({form, topic, rating})=>{
                             <option value="pg-13">pg-13</option>
                             <option value="r">r</option>
                     </select>
-                    <div ref={dropDown} onClick={handleClickDropDown} className="dropDown" ></div>
+                    <div ref={dropDown} onClick={()=> setActive(isActive ? false : true)} className="dropDown" ></div>
                     <div className="closeDropDown"></div>
                     <button className="search" ><img src={search} /></button>
                 </form>
-            <img src={close} onClick={handleClickDropDown} className="closeForm" />
-            </>
-            
+            <img src={close} onClick={()=> setActive(isActive ? false : true)} className="search-or-close" />
+        </>)
+
+    else return (
+        <img className="search-or-close" src={search} onClick={() => setActive(isActive ? false : true)} />
+    )
 }
 
 export default Search

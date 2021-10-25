@@ -3,19 +3,7 @@
 /* #84ffc2 analogous 2  */
 
 
-@keyframes animateMenu {
-    0% {
-        background-position: center;
-    }
 
-    50% {
-        background-position: bottom;
-    } 
-
-    100% {
-        background-position: center;
-    }
-}
 
 .shadows {
     box-shadow: 3px 0px 10px 0px #112221;

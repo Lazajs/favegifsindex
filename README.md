@@ -15,3 +15,9 @@
 - I may use react Router to display the search more easily instead of forwarding refs
 
 - Topics, rating, and cuantity to be global contexts
+
+<!-- Loading  -->
+
+- Change the name from "Charging" to "Loading" to the component
+
+- Change the animation and put something more serious

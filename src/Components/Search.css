@@ -12,6 +12,32 @@
     }
 }
 
+
+.search-or-close {
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #fff;
+    z-index: 50;
+    transition: all 1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .header__form {
     width: 100vw;
     height: 2rem;
@@ -24,10 +50,16 @@
     z-index: -20;
     opacity: 0;
 }
+ */
+
+
+
+
+
 
 
 /* active form  */
-.header__form.formActive > input, .header__form.formActive > select, .header__form.formActive .search {
+/* .header__form.formActive > input, .header__form.formActive > select, .header__form.formActive .search {
     display: inline-block;
     z-index: 20;
     opacity: 1;
@@ -205,4 +237,4 @@
         background-color: none;
     }
 
-}
+} */

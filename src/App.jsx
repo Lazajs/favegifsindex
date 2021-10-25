@@ -22,9 +22,9 @@ const App = ()=>{
     })
   }
 
-  useEffect(()=>{
-    form.current.onsubmit = handleSubmit
-  }, [options])
+  // useEffect(()=>{
+  //   form.current.onsubmit = handleSubmit
+  // }, [options])
   
 
   return (
