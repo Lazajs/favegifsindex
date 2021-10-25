@@ -1,7 +1,15 @@
-- Quitar el boton de buscar para hacer busqueda automática con cada cambio del input 
+<!-- Header and more  -->
+- The search form should be a single component so can be different from header.
 
-- Quitar el input de preferencia para la cantidad de gifs y utilizar lazy load en cambio
+- The search form should be a button in mobile, which will toggle onclick
 
-- Hacer reenvio de refs para pasar las refs (el input para gifs) a un componente padre y darselo al body
+- Maybe changing the header bg image to put a nice logo and delete that text
 
-- Intentar que los refs se actualicen al momento que hay un cambio (old refs)
+
+
+<!-- Main  -->
+- When the topic is changed, the number of rendered gifs should go back to the normal ( so reset the context whith the different topic )
+
+- If a gif is clicked, it should display the options to "Download" and "Share" to any social network 
+
+- I may use react Router to display the search more easily instead of forwarding refs
