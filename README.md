@@ -9,8 +9,3 @@
 
 - Topics, rating, and cuantity to be global contexts
 
-<!-- Loading  -->
-
-- Change the name from "Charging" to "Loading" to the component
-
-- Change the animation and put something more serious
