@@ -5,6 +5,7 @@ import Gif from './Gif'
 import Pages from './Pages'
 import GifsContext from '../context/GifsContext';
 import Loading from './Loading';
+
 const Main = ({topics, rating})=>{
     const [gifURL, setGifURL] = useState(null)
     const {data} = useContext(GifsContext)
@@ -19,7 +20,7 @@ const Main = ({topics, rating})=>{
         <>
             <main className="container">
                 {
-                    gifURL.map(singleGif => <Gif width={singleGif.width} height={singleGif.height} url={singleGif.url} key={singleGif.id} title={singleGif.title} />)
+                    gifURL.map(singleGif => <Gif url={singleGif.url} key={singleGif.id} title={singleGif.title} />)
                 }
             </main>
             <Pages />

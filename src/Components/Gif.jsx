@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import './Gif.css'
 
 
-const Gif = ({url, title, width, height})=>{
+const Gif = ({url, title})=>{
     return  <div  className="gif-container">
                 <img loading="lazy" alt={title} className="gif-img" src={url} />
                 <p>{title}</p>
