@@ -6,13 +6,13 @@ import Pages from './Pages'
 import GifsContext from '../context/GifsContext';
 import Loading from './Loading';
 
-const Main = ({topics, rating})=>{
+const Main = ()=>{
     const [gifURL, setGifURL] = useState(null)
     const {data} = useContext(GifsContext)
 
     useEffect(()=>{
-        if(topics) getGifs(topics, rating, data.count, data.offset).then(url => setGifURL(url))
-    },[topics,rating, data])
+        getGifs(data.topic, data.rating, data.count, data.offset).then(url => setGifURL(url))   
+    },[data])
     
     
     return (

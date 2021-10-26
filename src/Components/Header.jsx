@@ -1,8 +1,7 @@
 import './Header.css'
 import Search from './Search'
 
-const Header = ({topic, rating, form})=>{
-
+const Header = ()=>{
     return ( 
         <>
             <header className="header shadows">
@@ -11,7 +10,7 @@ const Header = ({topic, rating, form})=>{
                     <p>Find your favourite gifs and share them with your friends!</p>
                 </div>
             </header>
-            <Search topic={topic} rating={rating} form={form}  />
+            <Search  />
         </>
     )
 }

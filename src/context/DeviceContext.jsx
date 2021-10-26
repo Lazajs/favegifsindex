@@ -16,7 +16,7 @@ export const DeviceContext = ({children})=>{
       }
 
     return (
-        <Device.Provider value={{context, isMobile}}>
+        <Device.Provider value={{context}}>
             {children}
         </Device.Provider>
     )

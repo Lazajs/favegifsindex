@@ -8,7 +8,9 @@ const Pages = (ref)=>{
     const handleClick = ()=>{
         setData({
             count: data.count + 10,
-            offset: data.offset + 10
+            offset: data.offset + 10,
+            topic: data.topic,
+            rating: data.rating
         })
     }
 

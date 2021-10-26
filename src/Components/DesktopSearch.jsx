@@ -1,9 +1,22 @@
 import './DesktopSearch.css'
+import { useContext } from 'react'
+import GifsContext from '../context/GifsContext'
+const DesktopSearch = ()=>{
+    const {data, setData} = useContext(GifsContext)
 
-const DesktopSearch = ({topic, rating, form})=>{
-    return <form ref={form} className="desktop__form" action="get">
-                <input ref={topic} type="text" placeholder="Start finding your favourite gifs!"/>
-                    <select alt="rating" ref={rating}>
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+
+        if (data.topic !== e.target[0].value) {
+            setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
+        } else if (data.rating !== e.target[1].value) {
+            setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
+        }
+    }
+    
+    return <form onSubmit={handleSubmit} className="desktop__form" action="get">
+                <input  type="text" placeholder="Start finding your favourite gifs!"/>
+                    <select alt="rating">
                         <option value="g">g</option>
                         <option value="pg">pg</option>
                         <option value="pg-13">pg-13</option>
