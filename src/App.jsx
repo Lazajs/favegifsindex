@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import Main from './Components/Main';
 import Footer from './Components/Footer';
 import {GifsContext} from './context/GifsContext'
+import { DeviceContext } from './context/DeviceContext';
 
 const App = ()=>{
   // search queries 
@@ -28,13 +29,13 @@ const App = ()=>{
   
 
   return (
-    <>
+    <DeviceContext>
       <Header topic={topic} rating={rating} form={form} />
       <GifsContext> 
         <Main topics={options.topic} rating={options.rating} />
       </GifsContext> 
       <Footer />
-    </>
+    </DeviceContext>
   )
 }
 

@@ -1,10 +1,6 @@
 <!-- Header and more  -->
-- The search form should be a single component so can be different from header.
-
-- The search form should be a button in mobile, which will toggle onclick
-
-- Maybe changing the header bg image to put a nice logo and delete that text
-
+- create a context to know if the user is on mobile or desktop
+- maybe agregar onerror a los gifs
 
 
 <!-- Main  -->

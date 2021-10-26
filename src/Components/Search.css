@@ -50,7 +50,7 @@
 
 .header__form.action {
     transition: 700ms all;
-    clip-path: circle(75rem at 1rem 1rem);
+    clip-path: circle(150% at 1rem 1rem);
     z-index: 30;
 }
 
