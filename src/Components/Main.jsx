@@ -2,10 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 import './Main.css'
 import getGifs from './services/getGifs';
 import Gif from './Gif'
-import Charging from './Charging';
 import Pages from './Pages'
 import GifsContext from '../context/GifsContext';
-
+import Loading from './Loading';
 const Main = ({topics, rating})=>{
     const [gifURL, setGifURL] = useState(null)
     const {data} = useContext(GifsContext)
@@ -25,7 +24,7 @@ const Main = ({topics, rating})=>{
             </main>
             <Pages />
         </>
-               : <Charging />)
+               : <Loading/>)
 }
 
 export default Main;
