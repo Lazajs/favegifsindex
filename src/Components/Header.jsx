@@ -8,7 +8,7 @@ const Header = ({topic, rating, form})=>{
             <header className="header shadows">
                 <div className="header__text">
                     <h1 className="header__heading">faveGifs</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare tempus dapibus.</p>
+                    <p>Find your favourite gifs and share them with your friends!</p>
                 </div>
             </header>
             <Search topic={topic} rating={rating} form={form}  />

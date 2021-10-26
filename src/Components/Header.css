@@ -13,7 +13,7 @@
 
 .header {
     width: 100vw;
-    height: 90vh ;
+    height: 50vh ;
     background-image: linear-gradient(#000d, #000d), url('../images/headerbg2.gif');
     background-size: cover;
     background-position: center;
@@ -35,7 +35,7 @@
     text-align: center;
     line-height: 2;
     width: 50%;
-    color:#fffb;
+    color:#a384ffcc;
     font-weight: 400;
     margin-top: .8rem;
 
@@ -43,9 +43,9 @@
 
 .header__heading {
     background-color: transparent;
-    color: #fffc;
+    color: #a384ff;
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: .2rem;
     user-select: none;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
