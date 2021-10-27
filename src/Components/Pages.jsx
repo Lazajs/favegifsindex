@@ -2,7 +2,7 @@ import {useContext} from 'react'
 import './Pages.css'
 import GifsContext from '../context/GifsContext';
 
-const Pages = (ref)=>{
+const Pages = ({status})=>{
     const {data, setData} = useContext(GifsContext)
 
     const handleClick = ()=>{
@@ -14,7 +14,14 @@ const Pages = (ref)=>{
         })
     }
 
-    return <p onClick={handleClick} className="pages__container-p">Load more...</p>     
+    return  <>
+                {
+                    status  ? <p onClick={handleClick} className="pages__container-p">Load more...</p>
+                            : ''
+                }
+            </>
+    
+         
 }
 
 export default Pages

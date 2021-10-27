@@ -7,10 +7,12 @@ const DesktopSearch = ()=>{
     const handleSubmit = (e)=>{
         e.preventDefault()
 
-        if (data.topic !== e.target[0].value) {
-            setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
-        } else if (data.rating !== e.target[1].value) {
-            setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
+        if (e.target[0].value !== '') {
+            if (data.topic !== e.target[0].value) {
+                setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
+            } else if (data.rating !== e.target[1].value) {
+                setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
+            }
         }
     }
     
