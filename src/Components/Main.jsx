@@ -23,7 +23,7 @@ const Main = ()=>{
     return (
         (gifURL) ? 
         <>
-            {isFound ? '' : <h2 className="advice" >Invalid search or gifs limit reached.</h2>}
+            {isFound ? '' : <h2 className="advice">No more gifs found</h2>}
             <main className="container">
                 {
                     gifURL.map(singleGif => <Gif url={singleGif.url} key={singleGif.id} title={singleGif.title} />)
