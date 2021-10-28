@@ -16,12 +16,10 @@ const Pages = ({status})=>{
 
     return  <>
                 {
-                    status  ? <p onClick={handleClick} className="pages__container-p">Load more...</p>
+                    status  ? <p onClick={handleClick} className="pages__container-p">Load more gifs</p>
                             : ''
                 }
             </>
-    
-         
 }
 
 export default Pages
