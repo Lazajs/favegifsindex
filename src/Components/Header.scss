@@ -1,6 +1,4 @@
-/* #84c2ff  original  */
-/* #a384ff  analogous  */
-/* #84ffc2 analogous 2  */
+@import '../snippets/colors';
 
 .shadows {
     box-shadow: 3px 0px 10px 0px #112221;
@@ -11,9 +9,6 @@
 .header {
     width: 100vw;
     height: 50vh ;
-    background-image: linear-gradient(#000d, #000d), url('../images/headerbg2.gif');
-    background-size: cover;
-    background-position: center;
 }
 
 .header__text {
@@ -32,7 +27,7 @@
     text-align: center;
     line-height: 2;
     width: 50%;
-    color:#a384ffcc;
+    color:$secondary-color;
     font-weight: 400;
     margin-top: .8rem;
 
@@ -40,7 +35,7 @@
 
 .header__heading {
     background-color: transparent;
-    color: #a384ff;
+    color: $secondary-color;
     font-weight: 700;
     font-size: 5rem;
     letter-spacing: .2rem;

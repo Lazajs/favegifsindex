@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import './Main.css'
+import { useContext} from 'react';
+import './Main.scss'
 import Gif from './Gif'
 import Pages from './Pages'
 import GifsContext from '../context/GifsContext';

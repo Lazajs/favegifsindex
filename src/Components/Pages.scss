@@ -1,3 +1,5 @@
+@import '../snippets/colors';
+
 .pages__container-p {
     display: block;
     width: 90vw;
@@ -8,12 +10,12 @@
     font-weight: 700;
     margin: 2rem auto;
     text-align: center;
-    background-color: #6e3eff ;
+    background-color: $cuaternary-color;
     transition: background-color 250ms;
 }
 
 .pages__container-p:active {
-    background-color: #6e3eff99;
+    background-color: $cuaternary-color-smooth;
 }
 
 @media (min-width: 1024px) {
@@ -22,7 +24,7 @@
     }
 
     .pages__container-p:hover {
-        background-color: #6e3eff99;
+        background-color: $cuaternary-color-smooth;
     }
 }
 

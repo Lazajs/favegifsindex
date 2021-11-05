@@ -1,20 +1,16 @@
-import { useRef, useState, useEffect } from 'react'
-import Header from './Components/Header'
-import Main from './Components/Main';
-import Footer from './Components/Footer';
+import Header from './components/Header'
+import Main from './components/Main';
+import Footer from './components/Footer';
 import {GifsContext} from './context/GifsContext'
-import { DeviceContext } from './context/DeviceContext';
 
 const App = ()=>{
-  return (
-    <DeviceContext>
-      <GifsContext> 
-        <Header />
-        <Main />
-      </GifsContext> 
-      <Footer />
-    </DeviceContext>
-  )
+  return ( <>
+    <GifsContext> 
+      <Header />
+      <Main />
+    </GifsContext> 
+    <Footer />s
+  </>)
 }
 
 

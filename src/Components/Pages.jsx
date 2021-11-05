@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import './Pages.css'
+import './Pages.scss'
 import GifsContext from '../context/GifsContext';
 
 const Pages = ({status})=>{

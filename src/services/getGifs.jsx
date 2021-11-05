@@ -1,6 +1,6 @@
 function getGifs(keyword, rating, limit, offset) {
-    const API_KEY = `https://api.giphy.com/v1/gifs/search?api_key=O9cAnmn23tqC7ImqbJ0J8jUsvW7DJpkV&q=${keyword}&limit=${limit}&offset=${offset}&rating=${rating}&lang=en`
-    return fetch(API_KEY)
+    const API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${keyword}&limit=${limit}&offset=${offset}&rating=${rating}&lang=en`
+    return fetch(API_URL)
         .then(res => res.json())
         .then(res => {
             const { data } = res

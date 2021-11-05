@@ -1,5 +1,5 @@
 import React, {useState ,createContext, useEffect} from 'react'
-import getGifs from '../Components/services/getGifs'
+import getGifs from '../services/getGifs'
 
 const Context = createContext({})
 
@@ -9,7 +9,7 @@ export const GifsContext = ({children})=>{
     let num = Math.floor(Math.random()*arr.length)
 
     const [gifList, setGifs] = useState([]) //list of gifs
-    const [data, setData] = useState({offset: 0, count: 24, topic: arr[num], rating: "g"})  // gifs query data  
+    const [data, setData] = useState({offset: 0, count: 24, topic: arr[num], rating: "g", src: null})  // gifs query data  
     const [isFound, setFound] = useState(true) // if no more gifs are found...
 
     useEffect(()=>{
