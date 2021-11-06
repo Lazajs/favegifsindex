@@ -1,17 +1,13 @@
 @import '../snippets/colors';
-
-.shadows {
-    box-shadow: 3px 0px 10px 0px #112221;
--webkit-box-shadow: 3px 0px 10px 0px #112221;
--moz-box-shadow: 3px 0px 10px 0px #112221;
-}
+@import '../snippets/remSizing';
 
 .header {
     width: 100vw;
-    height: 50vh ;
+    height: 20vh ;
 }
 
 .header__text {
+    margin-top: 6rem;
     display: flex;
     width: 100%;
     height: 100%;
@@ -27,17 +23,18 @@
     text-align: center;
     line-height: 2;
     width: 50%;
-    color:$secondary-color;
-    font-weight: 400;
+    color:#111;
+    font-weight: 700;
     margin-top: .8rem;
+    font-size: 1.8rem;
 
 }
 
 .header__heading {
     background-color: transparent;
-    color: $secondary-color;
+    color: #000;
     font-weight: 700;
-    font-size: 5rem;
+    font-size: 6rem;
     letter-spacing: .2rem;
     user-select: none;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);

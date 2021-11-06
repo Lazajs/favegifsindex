@@ -1,5 +1,11 @@
-@import './snippets/remSizing';
 @import './snippets/reset';
+@import './snippets/remSizing';
 @import './snippets/colors';
 
-* {background-color: $primary-color;}
+* {
+    background-color: $primary-color;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {overflow-x: hidden;}

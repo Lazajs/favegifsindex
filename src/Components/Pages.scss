@@ -10,12 +10,11 @@
     font-weight: 700;
     margin: 2rem auto;
     text-align: center;
-    background-color: $cuaternary-color;
-    transition: background-color 250ms;
+    background-color: #111;
 }
 
 .pages__container-p:active {
-    background-color: $cuaternary-color-smooth;
+    background-color: #000;
 }
 
 @media (min-width: 1024px) {
@@ -24,7 +23,7 @@
     }
 
     .pages__container-p:hover {
-        background-color: $cuaternary-color-smooth;
+        background-color: #000;
     }
 }
 

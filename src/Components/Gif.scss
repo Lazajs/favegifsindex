@@ -1,7 +1,10 @@
+@import '../snippets/remSizing';
+
 .gif-container {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .gif-container p {

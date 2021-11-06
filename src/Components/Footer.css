@@ -1,3 +1,4 @@
+
 .footer {
     width : 100vw;
     display: flex;
@@ -41,10 +42,10 @@
 }
 
 .footer__social-a {
-    margin: 1rem;
+    margin: 1rem 2rem 0 2rem;
 }
 
 .footer__social-a img {
-    // filter: invert;
+    filter: invert();
     background-color: #fff;
 }

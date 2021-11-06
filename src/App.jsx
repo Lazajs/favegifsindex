@@ -9,7 +9,7 @@ const App = ()=>{
       <Header />
       <Main />
     </GifsContext> 
-    <Footer />s
+    <Footer />
   </>)
 }
 

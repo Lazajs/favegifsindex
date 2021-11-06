@@ -1,5 +1,5 @@
 @import '../snippets/colors';
-
+@import '../snippets/remSizing';
 
 .search-or-close {
     width: 6rem;
@@ -9,23 +9,22 @@
     position: fixed;
     top: 1rem;
     left: 1rem;
-    background-color: $secondary-color;
+    background-color: #fff;
     z-index: 50;
     transition: all 1s;
 }
 
+
 .search-or-close.action {
     transition: all 1s;
     transform: rotate(180deg);
-    // filter: invert();
-    background-color: #fff;
 }
 
 .header__form {
     clip-path: circle(0 at 4rem 4rem);
     width: 100vw;
     height: 100vh;
-    background-color: $secondary-color;
+    background-color: #111e;
     position: fixed;
     top: 0;
     display: flex;
@@ -44,7 +43,7 @@
 
 .header__form > * {
     background-color: #000;
-    height: 6rem;
+    height: 8rem;
     border-radius: 4px;
     margin-bottom: 2rem;
     color: #fff;
@@ -53,6 +52,7 @@
     border: none;
     outline: none;
     width: 99vw;
+    font-size: 1.8rem;
 }
 
 .header__form button {
@@ -69,7 +69,13 @@
 }
 
 .header__form select, .header__form select > * {
+    height: 5rem;
     width: 30vw;
     background-color: #000;
 }
 
+@media (min-width: 768px) {
+    .search-or-close, .header__form.action button, .header__form.action select{
+        cursor: pointer;
+    }
+}

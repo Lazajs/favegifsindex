@@ -1,4 +1,4 @@
-import './Footer.scss'
+import './Footer.css'
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 import instagram from '../images/instagram.svg'
