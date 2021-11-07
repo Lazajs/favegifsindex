@@ -13,8 +13,10 @@ const Search = ()=>{
 
         if (e.target[0].value !== '') {
             if (data.topic !== e.target[0].value) {
+                setActive(isActive ? false : true)
                 setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
             } else if (data.rating !== e.target[1].value) {
+                setActive(isActive ? false : true)
                 setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value, src: 'search'})
             }
         }
@@ -31,7 +33,7 @@ const Search = ()=>{
                     <option value="pg-13">pg-13</option>
                     <option value="r">r</option>
             </select>
-            <button onClick={()=> setActive(isActive ? false : true)} className="search" >Find</button>
+            <button className="search" >Find</button>
         </form>   
     </>
    )
