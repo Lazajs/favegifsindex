@@ -11,10 +11,9 @@ const Main = ()=>{
     return (
         (gifList) ? 
         <>
-            {isFound ? '' : <h2 className="advice">No more gifs found</h2>}
             <main className="container">
-                {
-                    gifList.map(singleGif => <Gif url={singleGif.url} key={singleGif.id} title={singleGif.title} />)
+                { 
+                    gifList.map(singleGif => <Gif url={singleGif.url} key={singleGif.id} title={singleGif.title} />)               
                 }
             </main>
             <Pages status={isFound} />

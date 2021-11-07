@@ -19,6 +19,8 @@
 }
 
 .gif-img {
+    min-height: 10rem;
+    min-width: 10rem;
     width: 100%;
     height: 100%;
     object-fit: cover;

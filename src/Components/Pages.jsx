@@ -7,7 +7,7 @@ const Pages = ({status})=>{
 
     const handleClick = ()=>{
         setData({
-            count: data.count + 10,
+            count: data.count,
             offset: data.offset + 10,
             topic: data.topic,
             rating: data.rating

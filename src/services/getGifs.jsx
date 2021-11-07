@@ -1,4 +1,4 @@
-function getGifs(keyword, rating, limit, offset) {
+async function getGifs(keyword, rating, limit, offset) {
     const API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${keyword}&limit=${limit}&offset=${offset}&rating=${rating}&lang=en`
     return fetch(API_URL)
         .then(res => res.json())
@@ -15,7 +15,7 @@ function getGifs(keyword, rating, limit, offset) {
 
                return info
             })
-            return (gif.length > 0) ? gif : ''
+            return gif
         })
 }
 

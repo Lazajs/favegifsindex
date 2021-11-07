@@ -3,7 +3,7 @@
     height: 35vh;
     top: 0;
     left: 0;
-    background-color: #242f3f;
+    background-color: transparent;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
     vertical-align: top;
     display: inline-block;
     width: 100%;
-    background-color: #fff;
+    background-color: #000;
     animation: loader-inner 2s infinite ease-in;
   }
   @keyframes loader {
