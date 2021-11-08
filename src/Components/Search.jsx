@@ -1,5 +1,5 @@
 import './Search.scss'
-import {useContext, useRef, useState} from 'react'
+import {useContext, useState} from 'react'
 import search from '../images/search.svg'   
 import close from '../images/close.svg'
 import GifsContext from '../context/GifsContext'
@@ -14,10 +14,10 @@ const Search = ()=>{
         if (e.target[0].value !== '') {
             if (data.topic !== e.target[0].value) {
                 setActive(isActive ? false : true)
-                setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value})
+                setData({ topic: e.target[0].value, rating: e.target[1].value})
             } else if (data.rating !== e.target[1].value) {
                 setActive(isActive ? false : true)
-                setData({count:24, offset: 0, topic: e.target[0].value, rating: e.target[1].value, src: 'search'})
+                setData({ topic: e.target[0].value, rating: e.target[1].value})
             }
         }
     }

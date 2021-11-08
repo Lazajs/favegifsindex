@@ -6,19 +6,24 @@ import GifsContext from '../context/GifsContext';
 import Loading from './Loading';
 
 const Main = ()=>{
-    const { gifList, isFound } = useContext(GifsContext) // now we fetch from the context and receive from here
+    const { gifList } = useContext(GifsContext) // now we fetch from the context and receive from here
 
     return (
-        (gifList) ? 
+        (gifList.length > 0) ? 
         <>
             <main className="container">
                 { 
                     gifList.map(singleGif => <Gif url={singleGif.url} key={singleGif.id} title={singleGif.title} />)               
                 }
             </main>
-            <Pages status={isFound} />
+            <Pages />
         </>
-               : <Loading/>)
+        
+        : <Loading/>
+               
+               
+               
+               )
 }
 
 export default Main;
