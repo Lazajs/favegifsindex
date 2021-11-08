@@ -1,80 +1,44 @@
 @import '../snippets/colors';
 @import '../snippets/remSizing';
-
-.search-or-close {
-    width: 6rem;
-    height: 6rem;
-    padding: 1rem;
-    border-radius: 50%;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    background-color: #fff;
-    z-index: 50;
-}
-
-
-.search-or-close.action {
-    transition: all 1s;
-}
-
-.header__form {
-    clip-path: circle(0 at 4rem 4rem);
-    width: 100vw;
-    height: 100vh;
-    background-color: #111e;
-    position: fixed;
-    top: 0;
+.form {
+    $bgc: #000;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: -1;
-    transition: 700ms all;
-}
+    height: 10vh;
+    max-height: 6rem;
+    width: 95vw;
+    max-width: 50rem;
+    margin: 5rem auto;
+    border-radius: 10px;
+    background-color: $bgc;
+    
+    & > * , select > *{
+        font-size: 1.8rem;
+        background-color: $bgc;
+        border: none;
+        outline: none;
+        color: #fff;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+    
+    input {
+        flex-grow: 3;
+    }
 
-.header__form.action {
-    transition: 700ms all;
-    clip-path: circle(150% at 1rem 1rem);
-    z-index: 30;
-}
+    button {
+        flex-grow: 1.5;
+        transition: background-color 150ms ease-out;
+        &:hover {
+            background-color: #232a2e;
+        }
+        @media (min-width: 768px) {
+            cursor:pointer;
+        }
+    }
 
-.header__form > * {
-    background-color: #000;
-    height: 8rem;
-    border-radius: 4px;
-    margin-bottom: 3rem;
-    color: #fff;
-    font-weight: 700;
-    padding: 0 .5rem 0 .5rem;
-    border: none;
-    outline: none;
-    width: 99vw;
-    font-size: 1.8rem;
-}
-
-.header__form button {
-    background-color: #555;
-    transition: background-color 250ms;
-}
-
-.header__form button:hover {
-    background-color: #333;
-}
-
-.header__form input {
-    font-weight: 400;
-    padding: 1rem;
-}
-
-.header__form select, .header__form select > * {
-    height: 5rem;
-    width: 30vw;
-    background-color: #000;
-}
-
-@media (min-width: 768px) {
-    .search-or-close, .header__form.action button, .header__form.action select{
-        cursor: pointer;
+    select {
+        @media (min-width: 768px) {
+            cursor:pointer;
+        }
     }
 }

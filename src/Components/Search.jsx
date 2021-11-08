@@ -5,7 +5,6 @@ import close from '../images/close.svg'
 import GifsContext from '../context/GifsContext'
 
 const Search = ()=>{
-    let [isActive, setActive] = useState(false)
     const {data, setData} = useContext(GifsContext)
 
     const handleSubmit = (e)=>{
@@ -13,20 +12,17 @@ const Search = ()=>{
 
         if (e.target[0].value !== '') {
             if (data.topic !== e.target[0].value) {
-                setActive(isActive ? false : true)
                 setData({ topic: e.target[0].value, rating: e.target[1].value})
             } else if (data.rating !== e.target[1].value) {
-                setActive(isActive ? false : true)
                 setData({ topic: e.target[0].value, rating: e.target[1].value})
             }
         }
     }
 
    return (
-        <>
-        <img src={isActive ? close : search} onClick={()=> setActive(isActive ? false : true)} className={isActive ? 'search-or-close action' : 'search-or-close'} />
-        <form onSubmit={handleSubmit} className={isActive ? 'header__form action' : 'header__form'} action="get">
-        <input type="text" placeholder="Start finding your favourite gifs!"/>
+        <>   
+        <form onSubmit={handleSubmit} className='form' action="get">
+            <input type="text" placeholder="Start finding your favourite gifs!"/>
             <select alt="rating">
                     <option value="g">g</option>
                     <option value="pg">pg</option>
