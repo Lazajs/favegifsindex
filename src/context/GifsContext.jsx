@@ -1,27 +1,30 @@
 import React, {useState ,createContext, useEffect} from 'react'
 import getGifs from '../services/getGifs'
-
+import getTrendings from '../services/getTrendings'
 
 const Context = createContext({})
 
 export const GifsContext = ({children})=>{
     const [gifList, setGifs] = useState([]) //list of gifs
-    const [data, setData] = useState({topic: "cats", rating: "g"})  // gifs query data  
+    const [data, setData] = useState('')  // gifs query data 
     const [offset, setOffset] = useState(0)
-    const [more, setMore] = useState(true) 
+
+    useEffect(()=>{
+        getTrendings().then(res => setGifs(res))
+    },[])
+
    
     useEffect(()=>{
-        getGifs(data.topic, data.rating, offset).then(info => info !== 0 ? setGifs(prev => prev.concat(info)) : setMore(false)) 
+       if (offset) getGifs(data.topic, data.rating, offset).then(info => info.length ? setGifs(prev => prev.concat(info)) : '') 
     }, [offset])
 
 
     useEffect(()=>{
         setOffset(0)
-        setMore(true)
-        getGifs(data.topic, data.rating, offset).then(urls =>setGifs(urls))   
+        if(data) getGifs(data.topic, data.rating, offset).then(urls =>setGifs(urls))
     },[data])
 
-    return <Context.Provider value={{data, setData, setOffset, gifList, more}}>
+    return <Context.Provider value={{data, setData, setOffset, gifList}}>
         {children}
     </Context.Provider>
 }

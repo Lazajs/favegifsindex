@@ -9,8 +9,6 @@ async function getGifs(keyword, rating, offset) {
                     url: img.images.downsized.url,
                     id: img.id,
                     title: img.title,
-                    width: img.images.downsized.width,
-                    height: img.images.downsized.height
                 }
 
                return info

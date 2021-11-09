@@ -1,19 +1,13 @@
-import {useContext} from 'react'
 import './Pages.scss'
-import GifsContext from '../context/GifsContext';
 
-const Pages = ()=>{
-    const {setOffset, more} = useContext(GifsContext)
+const Pages = ({offset})=>{
 
     const handleClick = ()=>{
-        setOffset(prevOffset => prevOffset + 12)
+        offset(prevOffset => prevOffset + 13)
     }
 
     return  <>
-                {
-                    more ? <p onClick={handleClick} className="pages__container-p">Load more gifs</p>
-                            : ''
-                }
+                <p onClick={handleClick} className="pages__container-p">Load more gifs</p>
             </>
 }
 
