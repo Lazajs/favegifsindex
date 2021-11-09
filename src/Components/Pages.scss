@@ -1,31 +1,44 @@
 @import '../snippets/colors';
+@import '../snippets/remsizing';
 
-.pages__container-p {
-    display: block;
-    width: 90vw;
-    height: 5rem;
-    padding-top: 1rem;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 2rem auto;
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
     text-align: center;
-    background-color: #111;
-}
+     b{
+        width: 10%;
+         font-size: 3rem;
+         font-weight: 700;
+     }
 
-.pages__container-p:active {
-    background-color: #000;
-}
+    .arrow {
+        width: 5rem;
+        height: 5rem;
 
-@media (min-width: 1024px) {
-    .pages__container-p {
-        cursor: pointer;
+        @media (min-width: 768px) {
+            cursor: pointer;
+            &:hover {
+                transition: transform 200ms ease-in-out;
+                transform: scale(1.1);
+            }
+        }
+        
+        &.prev {
+            transform: rotate(180deg);
+    
+            @media (min-width: 768px) {
+                &:hover {
+                    transform: scale(1.1) rotate(180deg);
+                }
+            }
+        }
+
+    
     }
-
-    .pages__container-p:hover {
-        background-color: #000;
-    }
 }
+
 
 
 

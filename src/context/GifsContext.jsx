@@ -7,15 +7,14 @@ const Context = createContext({})
 export const GifsContext = ({children})=>{
     const [gifList, setGifs] = useState([]) //list of gifs
     const [data, setData] = useState('')  // gifs query data 
-    const [offset, setOffset] = useState(0)
+    const [offset, setOffset] = useState(0) //offset for the fetch
 
     useEffect(()=>{
         getTrendings().then(res => setGifs(res))
     },[])
 
-   
     useEffect(()=>{
-       if (offset) getGifs(data.topic, data.rating, offset).then(info => info.length ? setGifs(prev => prev.concat(info)) : '') 
+       if (offset) getGifs(data.topic, data.rating, offset).then(info => info.length ? setGifs(info) : "") 
     }, [offset])
 
 
