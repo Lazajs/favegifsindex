@@ -1,4 +1,4 @@
-import React, {useState ,createContext, useEffect, useRef} from 'react'
+import React, {useState ,createContext, useEffect, useCallback} from 'react'
 import getGifs from '../services/getGifs'
 import getTrendings from '../services/getTrendings'
 
@@ -10,19 +10,23 @@ export function GifsContext({children}){
     const [count, setCount] = useState(1) //offset for the fetch
     let offset = count === 1 ? 0 : count * 12 + 1
     
+    const getNewGifs = ()=>{
+        getGifs(data, offset).then(info => info.length ? setGifs(info) : setCount(null)) //here is where to handle the error  
+    }
+
 
     useEffect(()=>{
         getTrendings().then(res => setGifs(res)) //homepage gifs
     },[])
 
     useEffect(()=>{
-        if(data) getGifs(data, offset).then(info => info.length ? setGifs(info) : setCount(null)) 
+        if(data) getNewGifs()
     }, [count])
 
     useEffect(()=>{
         if (data) {
             setCount(1)
-            getGifs(data, offset).then(info => info.length ? setGifs(info) : '') 
+            getNewGifs()
         }
     },[data])
 
