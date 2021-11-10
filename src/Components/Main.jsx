@@ -9,10 +9,10 @@ const Main = ()=>{
     const { gifList } = useContext(GifsContext) // now we fetch from the context and receive from here
     const [render, setRender] = useState(true)
 
-    useEffect(()=>{setRender(gifList ? true : false)},[gifList])
+    useEffect(()=>{setRender(gifList ? true : false)} ,[gifList])
 
     return (
-        (render) ? 
+        (render) ?
         <>
             <main className="container">
                 { 

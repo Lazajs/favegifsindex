@@ -24,6 +24,16 @@
                 transform: scale(1.1);
             }
         }
+
+        &.next {
+            &.disabled {
+                opacity: .3;
+                cursor: default;
+                &:hover {
+                    transform: none;
+                }
+            }
+        }
         
         &.prev {
             transform: rotate(180deg);
@@ -31,6 +41,14 @@
             @media (min-width: 768px) {
                 &:hover {
                     transform: scale(1.1) rotate(180deg);
+                }
+            }
+
+            &.disabled {
+                opacity: .3;
+                cursor: default;
+                &:hover {
+                    transform: rotate(180deg);
                 }
             }
         }

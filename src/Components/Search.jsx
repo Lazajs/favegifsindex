@@ -1,7 +1,5 @@
 import './Search.scss'
-import {useContext, useState} from 'react'
-import search from '../images/search.svg'   
-import close from '../images/close.svg'
+import {useContext} from 'react'
 import GifsContext from '../context/GifsContext'
 
 const Search = ()=>{
