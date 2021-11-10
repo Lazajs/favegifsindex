@@ -6,11 +6,10 @@ import GifsContext from '../context/GifsContext'
 
 const Search = ()=>{
     const {data, setData} = useContext(GifsContext)
-
     const handleSubmit = (e)=>{
         e.preventDefault()
 
-        if (e.target[0].value !== '') {
+        if (e.target[0].value !== '') { //only if there's something in the input
             if (data.topic !== e.target[0].value) {
                 setData({ topic: e.target[0].value, rating: e.target[1].value})
             } else if (data.rating !== e.target[1].value) {

@@ -1,6 +1,15 @@
-async function getGifs(keyword, rating, offset) {
+async function getGifs({keyword, rating}, offset) {
     const API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${keyword}&limit=12&offset=${offset}&rating=${rating}&lang=en`
-    return fetch(API_URL)
+
+    const abortController = new AbortController()
+    const signal = abortController.signal
+
+    if (abortController.currrent) {
+        console.log('aborted')
+        abortController.abort()
+    }
+
+    return fetch(API_URL, signal)
         .then(res => res.json())
         .then(res => {
             const { data } = res
