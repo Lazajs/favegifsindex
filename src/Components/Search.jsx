@@ -9,9 +9,9 @@ const Search = ()=>{
 
         if (e.target[0].value !== '') { //only if there's something in the input
             if (data.topic !== e.target[0].value) {
-                setData({ topic: e.target[0].value, rating: e.target[1].value})
+                setData(prev => {return {prev: prev, topic: e.target[0].value, rating: e.target[1].value}})
             } else if (data.rating !== e.target[1].value) {
-                setData({ topic: e.target[0].value, rating: e.target[1].value})
+                setData(prev => {return {prev: prev, topic: e.target[0].value, rating: e.target[1].value}})
             }
         }
     }
@@ -19,7 +19,7 @@ const Search = ()=>{
    return (
         <>   
         <form onSubmit={handleSubmit} className='form' action="get">
-            <input type="text" placeholder="Start finding your favourite gifs!"/>
+            <input id='search' type="text" placeholder="Start finding your favourite gifs!"/>
             <select alt="rating">
                     <option value="g">g</option>
                     <option value="pg">pg</option>

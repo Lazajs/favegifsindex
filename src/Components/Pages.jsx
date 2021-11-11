@@ -2,9 +2,10 @@ import './Pages.scss'
 import arrow from '../images/arrow.svg'
 import { useContext } from 'react'
 import GifsContext from '../context/GifsContext'
+import StartFinding from './StartFinding'
 
 const Pages = ()=>{
-    const {setCount, data, count} = useContext(GifsContext)
+    const {setCount, data, count, more} = useContext(GifsContext)
    
     const handleClick = (evt)=>{
         if (evt.target.classList.contains('prev')) setCount(count => count !== 1 ? count - 1 : 1)
@@ -18,10 +19,10 @@ const Pages = ()=>{
                 
         <b>{count}</b> {/*Page number*/}
 
-        {!count         ? <img src={arrow} alt="Next gifs" className="arrow next disabled" />
+        {!more          ? <img src={arrow} alt="Next gifs" className="arrow next disabled" />
                         : <img onClick={handleClick} src={arrow} alt="Next gifs" className="arrow next" />}
     </nav> 
-                : <h2>Search some gifssssssssssssss</h2>
+                : <StartFinding />
 }
 
 export default Pages

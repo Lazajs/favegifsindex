@@ -1,0 +1,22 @@
+@import '../snippets/remSizing';
+
+.find {
+    width: 25rem;
+    max-width: 90vw;
+    height: 6rem;
+    max-height: 10vh;
+    border-radius: 10px;
+    display: block;
+    margin: 6rem auto;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 1rems;
+    background-color: #000c;
+
+    @media (min-width: 768px) {
+        cursor:pointer;
+    }
+}
