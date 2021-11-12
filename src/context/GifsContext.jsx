@@ -22,6 +22,7 @@ export function GifsContext({children}){
     },[])
 
     useEffect(()=>{
+        console.log('count')
         if(data) getNewGifs(offset, ()=> setMore(false))
     }, [count])
 
@@ -32,7 +33,9 @@ export function GifsContext({children}){
     },[data])
 
     useEffect(()=>{
+        console.log('giflist')
         if (gifList.length < 12) setMore(false)
+        else setMore(true)
     },[gifList])
 
     return <Context.Provider value={{data, setData, count, setCount, more,  gifList}}>
