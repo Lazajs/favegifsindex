@@ -1,14 +1,16 @@
-$min: 20rem;
-
 .container {
     margin-top: 8rem;
     margin-left: 2rem;
     margin-right: 2rem;
     min-height: 100vh;
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax($min,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem,1fr));
     grid-template-rows: masonry;
     gap: .5rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    }
 }
 
 

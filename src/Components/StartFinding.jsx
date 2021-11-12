@@ -2,8 +2,8 @@ import './StartFinding.scss'
 
 function StartFinding() {
     const handle = ()=>{
-        window.scrollTo(0,0)
         document.getElementById('search').focus()
+        window.scrollTo(0,0)
     }
 
     return  <button onClick={handle} className="find">Start Finding</button>

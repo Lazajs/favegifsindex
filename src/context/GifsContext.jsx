@@ -1,15 +1,12 @@
-import React, {useState ,createContext, useEffect} from 'react'
+import React, {createContext, useEffect} from 'react'
 import getGifs from '../services/getGifs'
 import getTrendings from '../services/getTrendings'
+import useInformation from '../hooks/useInformation'
 
 const Context = createContext({})
 
 export function GifsContext({children}){
-    const [gifList, setGifs] = useState([]) //list of gifs
-    const [data, setData] = useState('')  // gifs query data 
-    const [count, setCount] = useState(1) //offset for the fetch
-    const [more, setMore] = useState(true) //more gifs on page change?
-
+    const [gifList, setGifs, data, setData, count, setCount, more, setMore] = useInformation()
     let offset = count === 1 ? 0 : count * 12 + 1
     
     const getNewGifs = (off, callback)=>{
@@ -22,7 +19,6 @@ export function GifsContext({children}){
     },[])
 
     useEffect(()=>{
-        console.log('count')
         if(data) getNewGifs(offset, ()=> setMore(false))
     }, [count])
 
@@ -33,7 +29,6 @@ export function GifsContext({children}){
     },[data])
 
     useEffect(()=>{
-        console.log('giflist')
         if (gifList.length < 12) setMore(false)
         else setMore(true)
     },[gifList])
